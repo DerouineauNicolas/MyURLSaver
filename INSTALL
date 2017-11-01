@@ -1,0 +1,15 @@
+1, First Run
+
+mkdir ~/.virtualenvs
+python3 -m venv ~/.virtualenvs/djangodev
+source ~/.virtualenvs/djangodev/bin/activate
+pip install Django
+python manage.py migrate
+python manage.py createsuperuser
+
+2, Run
+python manage.py migrate
+python manage.py runserver
+
+3,
+go to http://localhost:8000/myURLSaver_app/
