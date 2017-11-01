@@ -4,15 +4,24 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 from .models import Question
+from django.template import loader
 
 #def index(request):
 #    return HttpResponse("Welcome to myURLSaver !")
 
-
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    output = ', '.join([q.question_text for q in latest_question_list])
-    return HttpResponse(output)
+    template = loader.get_template('myURLSaver_app/index.html')
+    context = {
+        'latest_question_list': latest_question_list,
+    }
+    return HttpResponse(template.render(context, request))
+
+
+#def index(request):
+#    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+#    output = ', '.join([q.question_text for q in latest_question_list])
+#    return HttpResponse(output)
 
 def detail(request, question_id):
     return HttpResponse("You're looking at question %s." % question_id)
