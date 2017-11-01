@@ -2,11 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}Simple is Better Than Complex{% endblock %}</title>
+    <title>{% block title %}http://the.ndero.ovh/MyURLSaver</title>
   </head>
   <body>
     <header>
-      <h1>My Site</h1>
+      <h1>Welcome to myURL Saver</h1>
+      <h2>This website will allow you to save and retrieve your favorite urls from anywhere !</h2>
+      <h2>Please authenticate:</h2>
       {% if user.is_authenticated %}
         <a href="{% url 'logout' %}">logout</a>
       {% else %}
