@@ -68,6 +68,8 @@ TEMPLATES = [
     },
 ]
 
+AUTH_USER_MODEL = 'MyURLSaver_app.User'
+
 WSGI_APPLICATION = 'MyURLSaver.wsgi.application'
 
 
