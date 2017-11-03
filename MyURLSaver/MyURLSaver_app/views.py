@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
+from MyURLSaver_app.forms import SignUpForm, AddUrlsForm
 from django.shortcuts import render, redirect
 
 
@@ -11,7 +11,7 @@ def home(request):
 
 def signup(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
@@ -20,5 +20,16 @@ def signup(request):
             login(request, user)
             return redirect('home')
     else:
-        form = UserCreationForm()
+        form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
+
+def addurls(request):
+    if request.method == 'POST':
+        form = AddUrlsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            url = form.cleaned_data.get('urls')
+            request.user.add_url(url)
+    else:
+        form = AddUrlsForm()
+    return render(request, 'urls.html', {'form': form})
