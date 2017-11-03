@@ -1,5 +1,5 @@
 1, First Run
-
+sudo apt-get install python3-venv
 mkdir ~/.virtualenvs
 python3 -m venv ~/.virtualenvs/djangodev
 source ~/.virtualenvs/djangodev/bin/activate
