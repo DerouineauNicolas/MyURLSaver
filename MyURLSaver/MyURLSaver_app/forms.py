@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from MyURLSaver_app.models import User
+from MyURLSaver_app.models import User, URL
 
 
 class SignUpForm(UserCreationForm):
@@ -15,5 +15,10 @@ class AddUrlsForm(forms.ModelForm):
         model = User
         fields = ('urls', )
  
+class AddUrlsForm():
+
+    class Meta:
+        model = User
+        fields = ('urls', )
 
 

@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
-from MyURLSaver_app.forms import SignUpForm
+from MyURLSaver_app.forms import SignUpForm, AddUrlsForm
 from django.shortcuts import render, redirect
 
 
@@ -29,6 +29,7 @@ def addurls(request):
         if form.is_valid():
             form.save()
             url = form.cleaned_data.get('urls')
+            request.user.add_url(url)
     else:
         form = AddUrlsForm()
     return render(request, 'urls.html', {'form': form})
