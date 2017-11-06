@@ -22,3 +22,13 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
+
+def addurls(request):
+    if request.method == 'POST':
+        form = AddUrlsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            url = form.cleaned_data.get('urls')
+    else:
+        form = AddUrlsForm()
+    return render(request, 'urls.html', {'form': form})

@@ -6,7 +6,7 @@ class URL(models.Model):
     date = models.DateField()
 
 class User(AbstractUser):
-    url = models.ManyToManyField(URL)
+    urls = models.ManyToManyField(URL)
 
 
 
