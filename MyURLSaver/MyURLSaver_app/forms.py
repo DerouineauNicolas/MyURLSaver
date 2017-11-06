@@ -9,12 +9,6 @@ class SignUpForm(UserCreationForm):
         model = User
         fields = ('username', 'password1', 'password2', )
 
-class AddUrlsForm(forms.ModelForm):
-
-    class Meta:
-        model = User
-        fields = ('urls', )
- 
-class AddUrlsForm():
+class AddUrlsForm(forms.Form):
     url = forms.CharField(max_length=300)
-
+    
