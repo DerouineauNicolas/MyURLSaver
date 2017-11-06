@@ -6,7 +6,12 @@ class URL(models.Model):
     date = models.DateField()
 
 class User(AbstractUser):
-    url = models.ManyToManyField(URL)
+    urls = models.ManyToManyField(URL)
+
+    def add_url(self, url_str):
+        url, created = URL.objects.get_or_create(url=url_str)
+        self.urls.add(url)
+        self.save()
 
 
 
