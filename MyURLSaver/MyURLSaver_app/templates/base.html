@@ -21,11 +21,11 @@
         <a href="{% url 'logout' %}">logout</a>
         <script>
         $( "#AddNewURL").load("addurls/");
+        $( "#GetRegisteredURLs").load("seeurls/");
         </script>          
       {% else %}
         <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
       {% endif %}
-
 
     </main>
   </body>

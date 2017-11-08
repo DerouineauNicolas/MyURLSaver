@@ -24,6 +24,7 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
 
+@login_required
 def addurls(request):
     if request.method == 'POST':
         form = AddUrlsForm(request.POST)
@@ -34,3 +35,10 @@ def addurls(request):
     else:
         form = AddUrlsForm()
     return render(request, 'urls.html', {'form': form})
+
+@login_required
+def seeurls(request):
+    if request.method == 'POST':
+        return HttpResponseForbidden()
+    else:
+        return render(request, 'seeurls.html')
