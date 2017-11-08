@@ -30,6 +30,7 @@ def addurls(request):
         if form.is_valid():
             url = form.cleaned_data.get('url')
             request.user.add_url(url)
+            return redirect('home')
     else:
         form = AddUrlsForm()
     return render(request, 'urls.html', {'form': form})

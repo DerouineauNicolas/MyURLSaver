@@ -1,6 +1,6 @@
 <form action="/addurls/" method="post">
     {% csrf_token %}
-    <label for="url">Your url: </label>
+    <label for="url">add a new url: </label>
     <input id="url" type="text" name="url" value="{{ current_url }}">
     <input type="submit" value="OK">
 </form>

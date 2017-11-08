@@ -3,22 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title>{% block title %}http://the.ndero.ovh/MyURLSaver{% endblock %}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
   </head>
   <body>
     <header>
       <h1>Welcome to myURL Saver</h1>
-      <h2>This website will allow you to save and retrieve your favorite urls from anywhere !</h2>
-      <h2>Please authenticate:</h2>
-      {% if user.is_authenticated %}
-        <a href="{% url 'logout' %}">logout</a>
-      {% else %}
-        <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
-      {% endif %}
+      <p>This website will allow you to save and retrieve your favorite urls from anywhere !</p>
       <hr>
     </header>
     <main>
       {% block content %}
       {% endblock %}
+
+      {% if user.is_authenticated %} 
+        <ol id="AddNewURL"></ol>
+        <ol id="GetRegisteredURLs"></ol>
+        <a href="{% url 'logout' %}">logout</a>
+        <script>
+        $( "#AddNewURL").load("addurls/");
+        </script>          
+      {% else %}
+        <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
+      {% endif %}
+
+
     </main>
   </body>
 </html>
