@@ -1,4 +1,4 @@
-<form action="/addurls/" method="post">
+<form action="addurls/" method="post">
     {% csrf_token %}
     <label for="url">add a new url: </label>
     <input id="url" type="text" name="url" value="{{ current_url }}">
