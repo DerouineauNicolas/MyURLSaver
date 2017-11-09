@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{% block title %}http://the.ndero.ovh/MyURLSaver{% endblock %}</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-  </head>
-  <body>
-    <header>
-      <h1>Welcome to myURL Saver</h1>
-      <p>This website will allow you to save and retrieve your favorite urls from anywhere !</p>
-      <hr>
-    </header>
-    <main>
-      {% block content %}
-      {% endblock %}
+{% load static %}
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}http://the.ndero.ovh/MyURLSaver{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+        <link href="{% static 'MyURLSaver_app/URLSaver.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="blog-masthead">
+            <div class="container">
+                <header>
 
-      {% if user.is_authenticated %} 
-        <ol id="AddNewURL"></ol>
-        <ol id="GetRegisteredURLs"></ol>
-        <a href="{% url 'logout' %}">logout</a>
-        <script>
-        $( "#AddNewURL").load("addurls/");
-        $( "#GetRegisteredURLs").load("seeurls/");
-        </script>          
-      {% else %}
-        <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
-      {% endif %}
+                    <h1>Welcome to myURL Saver</h1>
+                    <p>This website will allow you to save and retrieve your favorite urls from anywhere !</p>
+                    <hr>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+                </header>
+                <main>
+                    {% block content %}
+                    {% endblock %}
 
-    </main>
-  </body>
+                    {% if user.is_authenticated %} 
+                    <ol id="AddNewURL"></ol>
+                    <ol id="GetRegisteredURLs"></ol>
+                    <a href="{% url 'logout' %}">logout</a>
+                    <script>
+                        $( "#AddNewURL").load("addurls/");
+                        $( "#GetRegisteredURLs").load("seeurls/");
+                    </script>          
+                    {% else %}
+                    <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
+                    {% endif %}
+
+                </main>
+            </div>
+        </div>
+    </body>
 </html>
