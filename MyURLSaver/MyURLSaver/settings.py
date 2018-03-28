@@ -27,9 +27,14 @@ else:
     sys.exit()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if("MyURLSaverProdKeyDEBUG" in os.environ):
+   print('DEBUG MODE')
+   DEBUG = True
+else:
+   print('PRODUCTION MODE')
+   DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['the.ndero.ovh']
 
 
 # Application definition
