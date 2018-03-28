@@ -12,5 +12,6 @@ go to http://localhost:8000/myURLSaver_app/
 
 
 #Debug tips
+export MyURLSaverProdKeyDEBUG=true
 python manage.py migrate --run-syncdb
 
