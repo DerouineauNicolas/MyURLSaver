@@ -34,7 +34,7 @@ else:
    print('PRODUCTION MODE')
    DEBUG = False
 
-ALLOWED_HOSTS = ['the.ndero.ovh']
+ALLOWED_HOSTS = ['the.ndero.ovh','localhost']
 
 
 # Application definition

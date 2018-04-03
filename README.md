@@ -5,7 +5,7 @@ This django based application allows users to save/retrieve their favorite urls 
 
 Address
 -------------------
-A running instance can be found at: http://the.ndero.ovh/MyURLSaver/ (raspberry hosted)
+A running instance can be found at: https://the.ndero.ovh/MyURLSaver/ (raspberry pi hosted)
 
 
 Install
