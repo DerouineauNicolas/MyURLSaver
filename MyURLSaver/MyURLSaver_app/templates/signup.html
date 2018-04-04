@@ -7,7 +7,7 @@
     {% for field in form %}
       <p>
         {{ field.label_tag }}<br>
-        {{ field }}
+        {{ field }}<br>
         {% if field.help_text %}
           <small style="color: grey">{{ field.help_text }}</small>
         {% endif %}
