@@ -1,3 +1,8 @@
-{% for url in user.urls.all %}
-<a href="{{ url.url_name }}"> {{ url.url_name }}</a><br/>
-{% endfor %}
+<div class="container-fluid">
+    Saved urls:
+    <div class="seeurlstyle">     
+       {% for url in user.urls.all %}
+       <a href="{{ url.url_name }}"> {{ url.url_name }}</a><br/>
+       {% endfor %}
+    </div>
+</div>

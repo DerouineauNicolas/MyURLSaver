@@ -9,11 +9,41 @@
     }
 }*/
 
-.blog-masthead {
-    margin-bottom: 5rem; 
+.top-header {
+    margin-bottom: 1rem; 
     background-color: white;
     color:black;
     text-align: center;
+}
+
+.welcome {
+    margin-bottom: 1rem; 
+    background-color: white;
+    color:black;
+    text-align: center;
+}
+
+.addurlsstyle {
+    margin-bottom: 1rem; 
+    background-color: white;
+    color:black;
+    text-align: center;
+}
+
+.signupsignin {
+    margin-bottom: 1rem; 
+    background-color: white;
+    color:black;
+    text-align: center;
+}
+
+.seeurlstyle {
+    margin-bottom: 1rem; 
+    background-color: white;
+    color:black;
+    text-align: left;
+    border-style: solid;
+    border-width: thin;
 }
 
 
