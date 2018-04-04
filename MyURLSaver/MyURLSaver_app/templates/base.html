@@ -15,7 +15,7 @@
                     <div class="col blog-main">
                         <header>
                             <div class="top-header">
-                                <h1>Welcome to myURL Saver</h1>
+                                <h1>Welcome to myURL Saver</h1>                                
                                 <p>This website will allow you to save and retrieve your favorite urls from anywhere !</p>
                                 <hr>
                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
@@ -27,8 +27,8 @@
                             {% endblock %}
 
                             {% if user.is_authenticated %} 
-                            <ol id="AddNewURL"></ol>
-                            <ol id="GetRegisteredURLs"></ol>
+                            <div id="AddNewURL"></div>
+                            <div id="GetRegisteredURLs"></div>
                             <script>
                                 $( "#AddNewURL").load("addurls/");
                                 $( "#GetRegisteredURLs").load("seeurls/");
@@ -36,13 +36,13 @@
                             {% else %}
                             <div class="signupsignin">
                                 <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
-                                <div>
-                                    {% endif %}
+                            </div>
+                            {% endif %}
 
-                                    </main>
-                            </div>
-                            </div>
+                        </main>
                     </div>
                 </div>
-                </body>
-            </html>
+            </div>
+        </div>
+    </body>
+</html>
