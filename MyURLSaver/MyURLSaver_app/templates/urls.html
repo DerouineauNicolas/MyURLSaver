@@ -1,5 +1,20 @@
+<script>
+function checkform(){
+   var fieldvalue = $.trim($('#url').val());
+   console.log(fieldvalue);
+   if(!fieldvalue.substring(0,4).localeCompare('http') || !fieldvalue.substring(0,5).localeCompare('https'))
+   {
+       return true;
+   }
+   else{
+       alert('protocol should be specified (http/https)');
+       return false;
+   } 
+}
+</script>
+
 <div class="addurlsstyle">
-<form action="addurls/" method="post">
+<form onsubmit="return checkform()" action="addurls/" method="post">
     {% csrf_token %}
     <input id="url" placeholder="Add a new url" type="text" name="url" value="{{ current_url }}">
     <input type="submit" value="OK">
