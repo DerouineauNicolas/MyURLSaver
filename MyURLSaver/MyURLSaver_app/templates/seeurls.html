@@ -1,8 +1,19 @@
 <div class="container-fluid">
     Saved urls:
     <div class="seeurlstyle">     
-       {% for url in user.urls.all %}
-       <a href="{{ url.url_name }}"> {{ url.url_name }}</a><br/>
-       {% endfor %}
+        {% for url in user.urls.all %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <!--<a href="{{ url.url_name }}"> {{ url.url_name }}</a>-->
+                    caca
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+            <br>
+        </div>
+        {% endfor %}
     </div>
 </div>
