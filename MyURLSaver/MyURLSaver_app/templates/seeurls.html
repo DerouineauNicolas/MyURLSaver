@@ -5,11 +5,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2">
-                    <!--<a href="{{ url.url_name }}"> {{ url.url_name }}</a>-->
-                    caca
+                    <a href="{{ url.url_name }}"> {{ url.url_name }}</a>
                 </div>
                 <div class="col-md-2">
-                    <button type="button" class="btn btn-danger">Delete</button>
+                    <form action="delurls/" method="post">
+                        <!--button type="button" value="submit" class="btn btn-danger">Delete</button>-->
+                        {% csrf_token %}
+                        <input id="url" name="url" value="{{ url.url_name }}" type="submit" value="Delete">
+                    </form>
                 </div>
             </div>
             <br>

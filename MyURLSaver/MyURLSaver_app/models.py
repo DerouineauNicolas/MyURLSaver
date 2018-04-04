@@ -14,6 +14,12 @@ class User(AbstractUser):
         self.urls.add(url)
         self.save()
 
+    def del_url(self, url_str):
+        #print(url_str)
+        url, created = URL.objects.get_or_create(url_name=url_str)
+        self.urls.remove(url)
+        self.save()
+
 
 
 

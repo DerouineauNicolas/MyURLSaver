@@ -3,6 +3,7 @@ from django.contrib.auth import login, authenticate
 from MyURLSaver_app.forms import SignUpForm, AddUrlsForm
 from django.shortcuts import render, redirect
 from MyURLSaver_app.models import URL
+from django.http import HttpResponse
 
 
 @login_required
@@ -42,3 +43,14 @@ def seeurls(request):
         return HttpResponseForbidden()
     else:
         return render(request, 'seeurls.html')
+
+@login_required
+def delurls(request):
+    if request.method == 'POST':
+        form = AddUrlsForm(request.POST)
+        if form.is_valid():
+            url = form.cleaned_data.get('url')
+        request.user.del_url(url)
+        return HttpResponse(status=204)
+    else:
+        return HttpResponseForbidden()
