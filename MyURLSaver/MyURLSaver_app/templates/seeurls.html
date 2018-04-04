@@ -9,9 +9,9 @@
                 </div>
                 <div class="col-md-2">
                     <form action="delurls/" method="post">
-                        <!--button type="button" value="submit" class="btn btn-danger">Delete</button>-->
                         {% csrf_token %}
-                        <input id="url" name="url" value="{{ url.url_name }}" type="submit" value="Delete">
+                        <input type="hidden" id="url" name="url" value="{{ url.url_name }}">
+                        <input type="submit" value="Delete">
                     </form>
                 </div>
             </div>

@@ -51,6 +51,6 @@ def delurls(request):
         if form.is_valid():
             url = form.cleaned_data.get('url')
         request.user.del_url(url)
-        return HttpResponse(status=204)
+        return redirect('home')
     else:
         return HttpResponseForbidden()
