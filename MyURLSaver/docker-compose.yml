@@ -11,7 +11,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - MyURLSaverProdDEBUG=0
+      - MyURLSaverProdKeyDEBUG=1
       - MyURLSaverProdKey=1111111
     depends_on:
       - db
