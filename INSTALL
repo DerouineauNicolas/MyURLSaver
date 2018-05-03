@@ -1,2 +1,6 @@
-1, docker compose-up
+First deploy static file to production server 
+1, python3 manage.py collectstatic
+
+Then launch all the services
+2, docker-compose up
 

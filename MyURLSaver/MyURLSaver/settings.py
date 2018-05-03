@@ -34,6 +34,9 @@ else:
    print('PRODUCTION MODE')
    DEBUG = False
 
+STATIC_URL = 'https://the.ndero.ovh/djangoStatic/'
+STATIC_ROOT = '/var/www/html/djangoStatic'
+
 ALLOWED_HOSTS = ['the.ndero.ovh','localhost']
 
 
