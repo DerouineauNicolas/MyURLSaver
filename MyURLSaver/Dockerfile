@@ -1,6 +1,7 @@
-FROM ubuntu
-RUN apt-get update
-RUN apt-get install python3 python3-pip
-RUN pip3 install django
-COPY . /app
-WORKDIR /app
+FROM python:3
+ENV PYTHONUNBUFFERED 1
+RUN mkdir /code
+WORKDIR /code
+ADD requirements.txt /code/
+RUN pip install -r requirements.txt
+ADD . /code/
