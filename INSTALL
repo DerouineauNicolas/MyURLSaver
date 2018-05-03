@@ -1,17 +1,2 @@
-1, First Run
-pip3 install Django
-python3 manage.py migrate
-python3 manage.py createsuperuser
-
-2, Run
-python3 manage.py migrate
-python3 manage.py runserver
-
-3,
-go to http://localhost:8000/myURLSaver_app/
-
-
-#Debug tips
-export MyURLSaverProdKeyDEBUG=true
-python manage.py migrate --run-syncdb
+1, docker compose-up
 
