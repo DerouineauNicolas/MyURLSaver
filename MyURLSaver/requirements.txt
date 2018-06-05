@@ -1,2 +1,3 @@
-Django11
+Django
 psycopg2
+gunicorn
