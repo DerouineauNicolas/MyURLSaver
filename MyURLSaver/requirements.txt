@@ -1,2 +1,2 @@
-Django11
+Django
 psycopg2
