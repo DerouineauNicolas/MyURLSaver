@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from MyURLSaver_app.forms import SignUpForm, AddUrlsForm
 from django.shortcuts import render, redirect
 from MyURLSaver_app.models import URL
@@ -24,6 +24,10 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
+
+def LogoutView(request):
+    logout(request)
+    return render(request, 'base.html')
 
 @login_required
 def addurls(request):
