@@ -35,7 +35,7 @@ else:
    DEBUG = False
 
 STATIC_URL = 'https://the.ndero.ovh/djangoStatic/'
-STATIC_ROOT = '/var/www/html/djangoStatic'
+STATIC_ROOT = '/var/www/website2/djangoStatic'
 
 ALLOWED_HOSTS = ['the.ndero.ovh','localhost']
 
@@ -131,8 +131,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
-STATIC_URL = '/static/'
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
