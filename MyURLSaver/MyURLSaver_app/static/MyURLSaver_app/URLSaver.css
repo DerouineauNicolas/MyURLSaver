@@ -9,38 +9,56 @@
     }
 }*/
 
-.top-header {
-    margin-bottom: 1rem; 
-    background-color: white;
-    color:black;
+
+body {
+   background-image: url("blurred.jpg");
+   background-color: #cccccc;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.mh-100{ 
+    color:white;
+    text-align: center;
+}
+
+
+.urls{ 
+    color:white;
+    text-align: center;
+}
+
+.helper{ 
+    color:white;
+    text-align: center;
+}
+
+.top-header { 
+    color:white;
     text-align: center;
 }
 
 .welcome {
     margin-bottom: 1rem; 
-    background-color: white;
-    color:black;
+    color:white;
     text-align: center;
 }
 
 .addurlsstyle {
     margin-bottom: 1rem; 
-    background-color: white;
-    color:black;
+    color:white;
     text-align: center;
 }
 
 .signupsignin {
     margin-bottom: 1rem; 
-    background-color: white;
-    color:black;
+    color:white;
     text-align: center;
 }
 
 .seeurlstyle {
     margin-bottom: 1rem; 
-    background-color: white;
-    color:black;
+    color:white;
     text-align: left;
     border-style: solid;
     border-width: thin;
