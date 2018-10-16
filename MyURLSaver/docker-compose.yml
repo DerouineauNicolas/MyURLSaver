@@ -3,6 +3,7 @@ version: '2'
 services:
   db:
     image: postgres
+    restart: always
   web:
     build: .
     command: bash -c "python3 manage.py makemigrations && python3 manage.py migrate --run-syncdb && python3 manage.py runserver 0.0.0.0:8001"
@@ -11,7 +12,7 @@ services:
     ports:
       - "8001:8001"
     environment:
-      - MyURLSaverProdKeyDEBUG=1
       - MyURLSaverProdKey=1111111
     depends_on:
       - db
+    restart: always
